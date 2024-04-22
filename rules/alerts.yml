@@ -11,6 +11,9 @@ groups:
       labels:
         severity: critical
         team: Team Alpha
+      annotations:
+        summary: This a task to confirm if prometheus is up and running
+        description: This a task for Team alpha to confirm if prometheus is up and running
 
     - alert: Is Choudhary-macmini Job Up & Running
       expr: up{job="Choudhary-macmini"} == 0
@@ -18,6 +21,9 @@ groups:
       labels:
         severity: error
         team: Team Alpha
+      annotations:
+        summary: This a task to confirm if Choudhary-macmini is up and running
+        description: This a task for Team alpha to confirm if Choudhary-macmini is up and running
 
     - alert: PrometheusJobMissing
       expr: 'absent(up{job="prometheus"})'
