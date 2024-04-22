@@ -3,6 +3,8 @@ groups:
 - name: EmbeddedExporter
 
   rules:
+    - alert: Is PrometheusJ ob Up
+      expr: up{job="prometheus"} == 0
 
     - alert: PrometheusJobMissing
       expr: 'absent(up{job="prometheus"})'
