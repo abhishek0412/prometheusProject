@@ -7,9 +7,11 @@ groups:
   rules:
     - alert: Is Prometheus Job Up Up & Running
       expr: up{job="prometheus"} == 0
+      for: 10s
 
     - alert: Is Choudhary-macmini Job Up & Running
       expr: up{job="Choudhary-macmini"} == 0
+      for: 1m
 
     - alert: PrometheusJobMissing
       expr: 'absent(up{job="prometheus"})'
